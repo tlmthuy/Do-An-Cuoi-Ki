@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poll Invitation - GoodFood</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="brand"><div class="logo-circle">G</div><span>GOODFOOD</span></div>
+            <nav class="menu">
+                <div class="menu-label">MENU</div>
+                <a href="#" class="menu-item active"><span class="icon">📊</span> Dashboard</a>
+                <div class="menu-label mt-20">OTHERS</div>
+                <a href="#" class="menu-item"><span class="icon">⚙️</span> Settings</a>
+                <a href="#" class="menu-item"><span class="icon">👤</span> Accounts</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <h2 class="page-title">Group meeting</h2>
+                <div class="user-profile"><div class="avatar">🍔</div><span>Minh Thuy ⌄</span></div>
+            </header>
+
+            <div class="content-body" style="max-width: 800px;">
+                <div class="header-text">
+                    <h1>Poll invitation</h1>
+                    <p class="subtitle">You've been invited to share your availability for this poll.</p>
+                </div>
+
+                <div class="card">
+                    <div style="background: #e0e7ff; color: #4f46e5; display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 16px;">
+                        You're invited
+                    </div>
+
+                    <div class="section-header">
+                        <h2 style="font-size: 20px; margin-bottom: 8px;">Weekly check-in with team</h2>
+                        <p>Trung is asking for your free time to schedule this meeting.</p>
+                    </div>
+
+                    <div style="display: flex; gap: 40px; margin: 24px 0; border-bottom: 1px solid #f3f4f6; padding-bottom: 24px;">
+                        <div>
+                            <p style="font-size: 12px; color: #6b7280; margin-bottom: 4px;">Host</p>
+                            <p style="font-weight: 600; font-size: 14px;">Trung</p>
+                        </div>
+                        <div>
+                            <p style="font-size: 12px; color: #6b7280; margin-bottom: 4px;">Schedule window</p>
+                            <p style="font-weight: 600; font-size: 14px;">This week • 30 minutes</p>
+                        </div>
+                        <div>
+                            <p style="font-size: 12px; color: #6b7280; margin-bottom: 4px;">Timezone</p>
+                            <p style="font-weight: 600; font-size: 14px;">GMT+7 — Ho Chi Minh</p>
+                        </div>
+                    </div>
+
+                    <div class="section-header">
+                        <h3>Who are you?</h3>
+                        <p>We'll show your name to the host so they know who responded.</p>
+                    </div>
+
+                    <form onsubmit="handleAccept(event)" style="margin-top: 16px;">
+                        <div class="form-group">
+                            <label>Your name</label>
+                            <input type="text" id="guest-name" class="form-control" placeholder="Enter your name (e.g. Thu, Hảo...)" required>
+                        </div>
+                        <p style="font-size: 12px; color: #9ca3af; margin-top: 8px;">No login required. Your name will be attached to your availability.</p>
+
+                        <div style="margin-top: 24px; padding: 16px; background: #f9fafb; border-radius: 8px;">
+                            <p style="font-size: 13px; font-weight: 600; margin-bottom: 8px;">What happens next?</p>
+                            <p style="font-size: 12px; color: #6b7280;">After you accept, you'll choose your free time. Then the host will pick the final meeting time.</p>
+                        </div>
+
+                        <div class="form-footer" style="justify-content: flex-start;">
+                            <button type="submit" class="btn-primary">Accept & choose my time</button>
+                            <button type="button" class="btn-text">Decline</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function handleAccept(e) {
+            e.preventDefault();
+            const name = document.getElementById('guest-name').value;
+            if(name) {
+                // Lưu tên tạm vào localStorage để trang sau dùng (nếu muốn xịn)
+                localStorage.setItem('guestName', name);
+                
+                // Chuyển sang trang chọn lịch
+                window.location.href = "index.html";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Meeting - GoodFood</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo-circle">G</div>
+                <span>GOODFOOD</span>
+            </div>
+
+            <nav class="menu">
+                <div class="menu-label">MENU</div>
+                <a href="#" class="menu-item active">
+                    <span class="icon">📊</span> Dashboard
+                </a>
+                
+                <div class="menu-label mt-20">OTHERS</div>
+                <a href="#" class="menu-item"><span class="icon">⚙️</span> Settings</a>
+                <a href="#" class="menu-item"><span class="icon">👤</span> Accounts</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <h2 class="page-title">Group meeting</h2>
+                <div class="user-profile">
+                    <div class="avatar">🍔</div>
+                    <span>Minh Thuy ⌄</span>
+                    <span class="notification-dot">🔔</span>
+                </div>
+            </header>
+
+            <div class="content-body">
+                <div class="header-text">
+                    <h1>Find common free time</h1>
+                    <p class="subtitle">Select your availability. We'll combine it with everyone else's responses.</p>
+                </div>
+
+                <div class="dashboard-grid">
+                    
+                    <div class="left-panel">
+                        <div class="card">
+                            <div class="section-header">
+                                <h3>Your availability</h3>
+                                <p>Click on blocks to mark when you're available. Darker blocks mean you've selected them.</p>
+                            </div>
+                            
+                            <div class="grid-label">Your free time <span style="font-weight:400; color:#9ca3af; font-size:12px">(We'll use these slots as your personal availability)</span></div>
+                            
+                            <div id="input-grid" class="grid-wrapper"></div> <div class="action-row">
+                                <button onclick="clearAll()" class="btn-text">Clear</button>
+                                <button onclick="saveData()" class="btn-primary">Save my availability</button>
+                            </div>
+
+                            <hr class="divider">
+
+                            <div class="section-header mt-20">
+                                <h3>Group availability</h3>
+                                <p>This view combines everyone's responses. Darker blocks mean more people are available.</p>
+                            </div>
+                            
+                            <div id="heatmap-grid" class="grid-wrapper"></div> <div class="legend">
+                                <span class="legend-item"><span class="box level-0"></span> 0 available</span>
+                                <span class="legend-item"><span class="box level-1"></span> Few available</span>
+                                <span class="legend-item"><span class="box level-2"></span> Most available</span>
+                                <span class="legend-item"><span class="box level-3"></span> Everyone available</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="right-panel">
+                        <div class="card side-card">
+                            <div class="status-badge">Poll created</div>
+                            <p class="small-text">Share this link so your teammates can choose their free time.</p>
+                            
+                            <label class="input-label">Shareable link</label>
+                            <div class="link-box">
+                                <input type="text" value="https://goodtime.app/poll/123456" readonly>
+                                <button>Copy</button>
+                            </div>
+
+                            <div class="info-list">
+                                <p><strong>Status</strong></p>
+                                <ul class="status-details">
+                                    <li><strong>Host:</strong> You</li>
+                                    <li><strong>Participants:</strong> Hảo, Thu, (2 more...)</li>
+                                    <li><strong>Responses:</strong> 1 / 4 submitted</li>
+                                </ul>
+                            </div>
+
+                            <div class="tips-box">
+                                <strong>Tips</strong>
+                                <p>Paste the link into your chat group or calendar invite so people can respond quickly.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Poll - GoodFood</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_blue.css">
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="brand"><div class="logo-circle">G</div><span>GOODFOOD</span></div>
+            <nav class="menu">
+                <div class="menu-label">MENU</div>
+                <a href="#" class="menu-item active">
+                    <span class="icon">📊</span> Dashboard
+                </a>
+                <div class="menu-label mt-20">OTHERS</div>
+                <a href="#" class="menu-item"><span class="icon">⚙️</span> Settings</a>
+                <a href="#" class="menu-item"><span class="icon">👤</span> Accounts</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <h2 class="page-title">Group meeting</h2>
+                <div class="user-profile"><div class="avatar">🍔</div><span>Minh Thuy ⌄</span></div>
+            </header>
+
+            <div class="content-body" style="max-width: 800px;">
+                <div class="header-text">
+                    <h1>Create poll</h1>
+                    <p class="subtitle">Set up a poll so your team can later select common free time.</p>
+                </div>
+
+                <div class="card">
+                    <div class="section-header">
+                        <h3>Poll details</h3>
+                        <p>Name your poll and define basic information.</p>
+                    </div>
+
+                    <form id="create-poll-form" onsubmit="handleCreatePoll(event)">
+                        <div class="form-group">
+                            <label>Poll name</label>
+                            <input type="text" class="form-control" placeholder="e.g. Weekly check-in with team" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Timezone</label>
+                            <select class="form-control">
+                                <option>GMT+7 — Ho Chi Minh</option>
+                                <option>GMT+0 — London</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea class="form-control" rows="3" placeholder="Optional. Add agenda or notes for your teammates."></textarea>
+                        </div>
+
+                        <hr class="divider">
+
+                        <div class="section-header">
+                            <h3>Meeting preferences</h3>
+                            <p>Choose when you'd like the meeting to happen.</p>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label>Date range</label>
+                                <input type="text" id="date-range-picker" class="form-control" placeholder="Select date range...">
+                            </div>
+                            <div class="form-group half">
+                                <label>Duration</label>
+                                <select class="form-control">
+                                    <option>30 minutes</option>
+                                    <option>60 minutes</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-footer">
+                            <button type="button" class="btn-text">Cancel</button>
+                            <button type="submit" class="btn-primary">Create poll</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+   <script>
+        // Kích hoạt lịch + GIỜ CỤ THỂ
+        flatpickr("#date-range-picker", {
+            mode: "range",             // Chế độ chọn khoảng (Từ ... Đến ...)
+            minDate: "today",          // Không chọn ngày quá khứ
+            enableTime: true,          // <--- QUAN TRỌNG: Bật tính năng chọn giờ
+            dateFormat: "Y-m-d H:i",   // Định dạng hiển thị: Năm-Tháng-Ngày Giờ:Phút
+            time_24hr: true,           // Dùng chế độ 24h (ví dụ 14:00 thay vì 2:00 PM)
+            
+            // Tùy chỉnh text nối giữa 2 ngày
+            locale: {
+                rangeSeparator: "  đến  " 
+            },
+            onChange: function(selectedDates, dateStr, instance) {
+                console.log("Thời gian đã chọn:", dateStr);
+            }
+        });
+
+        // Hàm xử lý khi bấm nút Tạo Poll
+        function handleCreatePoll(e) {
+            e.preventDefault(); 
+            // Lấy giá trị từ ô nhập lịch
+            const dateRange = document.getElementById("date-range-picker").value;
+            
+            if(!dateRange) {
+                alert("Vui lòng chọn thời gian!");
+                return;
+            }
+
+            alert("Đã tạo Poll thành công với thời gian:\n" + dateRange);
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
