@@ -141,3 +141,62 @@ textarea.form-control { resize: vertical; }
     padding-top: 20px;
     border-top: 1px solid #f3f4f6;
 }
+.login-card {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+/* --- STYLE CHO BẢNG DASHBOARD (LIST VIEW) --- */
+.poll-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.poll-table th {
+    text-align: left;
+    padding: 16px 24px;
+    background: #f9fafb;
+    font-size: 12px;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+}
+
+.poll-table td {
+    padding: 16px 24px;
+    border-bottom: 1px solid #f3f4f6;
+    font-size: 14px;
+    color: #374151;
+    vertical-align: middle;
+}
+
+.poll-table tr:last-child td { border-bottom: none; }
+.poll-table tr:hover { background-color: #f9fafb; }
+
+/* Các nút nhỏ trong bảng */
+.btn-sm {
+    padding: 6px 12px;
+    border: 1px solid #d1d5db;
+    background: white;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #374151;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 8px;
+}
+.btn-sm:hover { border-color: #4f46e5; color: #4f46e5; }
+.btn-disabled { opacity: 0.6; cursor: not-allowed; background: #f3f4f6; }
+
+.btn-text-sm { background: none; border: none; font-size: 12px; color: #6b7280; cursor: pointer; font-weight: 500; }
+.text-red { color: #ef4444; }
+
+/* Trạng thái (Open/Closed) */
+.badge { padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+.badge-green { background: #d1fae5; color: #059669; }
+.badge-gray { background: #f3f4f6; color: #6b7280; }

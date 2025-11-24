@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - GoodFood</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="brand"><div class="logo-circle">G</div><span>GOODFOOD</span></div>
+            <nav class="menu">
+                <div class="menu-label">MENU</div>
+                <a href="dashboard.html" class="menu-item active"><span class="icon">📊</span> Dashboard</a>
+                <div class="menu-label mt-20">OTHERS</div>
+                <a href="#" class="menu-item"><span class="icon">⚙️</span> Settings</a>
+                <a href="login.html" class="menu-item"><span class="icon">🚪</span> Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <h2 class="page-title">Group meeting</h2>
+                <div class="user-profile"><div class="avatar">🍔</div><span>Minh Thuy ⌄</span></div>
+            </header>
+
+            <div class="content-body">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px;">
+                    <div class="header-text" style="margin-bottom: 0;">
+                        <h1>Your poll</h1>
+                        <p class="subtitle">These polls are still open for responses.</p>
+                    </div>
+                    <a href="create.html" class="btn-primary" style="text-decoration: none; display: inline-flex; align-items: center;">
+                        + Create new poll
+                    </a>
+                </div>
+
+                <div class="card" style="padding: 0; overflow: hidden;">
+                    <div style="padding: 20px; border-bottom: 1px solid #f3f4f6;">
+                        <h3 style="font-size: 16px;">Active polls</h3>
+                    </div>
+                    
+                    <table class="poll-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 30%">Poll</th>
+                                <th>Schedule window</th>
+                                <th>Responses</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div style="font-weight: 600; color: #111827;">Weekly check-in</div>
+                                    <div style="font-size: 11px; color: #9ca3af;">Created 15 Nov • GMT+7</div>
+                                </td>
+                                <td>This week • 30 mins</td>
+                                <td>3 / 5 submitted</td>
+                                <td><span class="badge badge-green">Open</span></td>
+                                <td>
+                                    <a href="index.html" class="btn-sm">View poll</a>
+                                    <button class="btn-text-sm">Copy link</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="font-weight: 600; color: #111827;">Project deep dive</div>
+                                    <div style="font-size: 11px; color: #9ca3af;">Created 10 Nov • GMT+7</div>
+                                </td>
+                                <td>Next week • 60 mins</td>
+                                <td>2 / 4 submitted</td>
+                                <td><span class="badge badge-green">Open</span></td>
+                                <td>
+                                    <a href="index.html" class="btn-sm">View poll</a>
+                                    <button class="btn-text-sm">Copy link</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="font-weight: 600; color: #111827;">Retro & planning</div>
+                                    <div style="font-size: 11px; color: #9ca3af;">Created 01 Nov • GMT+7</div>
+                                </td>
+                                <td>Custom range</td>
+                                <td>4 / 4 submitted</td>
+                                <td><span class="badge badge-gray">Closed</span></td>
+                                <td>
+                                    <button class="btn-sm btn-disabled">View results</button>
+                                    <button class="btn-text-sm text-red">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
